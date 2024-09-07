@@ -58,9 +58,14 @@ dependencies {
 
     implementation (libs.retrofit)
     implementation (libs.gson)
+    implementation (libs.gson.converter)
     implementation(libs.coil.compose)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation (libs.viewmodel.compose)
+    implementation (libs.valentinilk.shimmer)
+    implementation (libs.runtime.ktx)
+    implementation (libs.hilt.navigation.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
