@@ -45,5 +45,5 @@ This is a sample Android application that demonstrates the use of various modern
 
 Add screenshots of the app below:
 
-![image](https://github.com/user-attachments/assets/229ed7ab-9f22-4538-befa-c4929733a809)
+![image](screenshots/img.png)
 
