@@ -46,4 +46,5 @@ This is a sample Android application that demonstrates the use of various modern
 Add screenshots of the app below:
 
 ![image](screenshots/img.png)
+![Sequence diagram](screenshots/sequenceDiagram.png)
 
