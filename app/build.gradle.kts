@@ -1,3 +1,29 @@
+import java.io.File
+
+var cachedVersion: Int? = null
+
+fun getIncrementalVersion(): Int {
+    if (cachedVersion != null) {
+        return cachedVersion!!
+    }
+    val versionFile = File("${project.rootDir}/version.txt")
+
+    if (!versionFile.exists() || versionFile.readText().trim().isEmpty()) {
+        versionFile.writeText("1")
+    }
+
+    val currentVersion = try {
+        versionFile.readText().trim().toInt()
+    } catch (e: NumberFormatException) {
+        versionFile.writeText("1")
+        1
+    }
+    versionFile.writeText((currentVersion + 1).toString())
+
+    cachedVersion = currentVersion
+    return currentVersion
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -42,6 +68,15 @@ android {
 
     kapt {
         correctErrorTypes = true
+    }
+
+    applicationVariants.all {
+        val variant = this
+        variant.outputs.all {
+            val apkOutput = this as com.android.build.gradle.internal.api.ApkVariantOutputImpl
+            val newName = "EcommerceSample-${variant.name}-V${getIncrementalVersion()}.apk"
+            apkOutput.outputFileName = newName
+        }
     }
 }
 
