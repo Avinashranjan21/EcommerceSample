@@ -66,6 +66,7 @@ dependencies {
     implementation (libs.valentinilk.shimmer)
     implementation (libs.runtime.ktx)
     implementation (libs.hilt.navigation.compose)
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
