@@ -1,11 +1,10 @@
 package com.example.ecommercesample.screen
 
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.ecommercesample.model.SectionType.BANNER
@@ -18,11 +17,11 @@ import com.example.ecommercesample.viewmodel.UiState
 fun SectionListScreen(viewModel: MainViewModel = hiltViewModel()) {
     when (val state = viewModel.sectionState.value) {
         is UiState.Loading -> {
-            Box(
-                modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
+            Column(modifier = Modifier.fillMaxSize(),
             ) {
-                ShimmeringLoadingScreen()
+                ShimmerBannerSection()
+                ShimmerHorizontalFreeScrollSection()
+                ShimmerSplitBannerSection()
             }
         }
 

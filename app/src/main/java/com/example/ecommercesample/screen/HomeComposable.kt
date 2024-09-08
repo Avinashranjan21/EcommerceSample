@@ -43,7 +43,7 @@ fun BannerSection(items: List<Item>) {
                 shape = RoundedCornerShape(12.dp),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(200.dp)
+                    .height(250.dp)
                     .padding(vertical = 4.dp)
             ) {
                 Box(modifier = Modifier.fillMaxSize()) {
@@ -72,7 +72,7 @@ fun HorizontalFreeScrollSection(items: List<Item>) {
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier
                     .padding(4.dp)
-                    .size(150.dp),
+                    .size(200.dp),
             ) {
                 Box(modifier = Modifier.fillMaxSize()) {
                     AsyncImage(
@@ -121,7 +121,7 @@ fun SplitBannerSection(items: List<Item>) {
                 modifier = Modifier
                     .weight(1f)
                     .padding(8.dp)
-                    .height(150.dp)
+                    .height(200.dp)
             ) {
                 AsyncImage(
                     model = item.image,
